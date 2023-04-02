@@ -44,11 +44,16 @@ class PlaylistSongs extends StatelessWidget {
         index: index,
         cells: [
           DataCell(
-            // Add HoverableSongPlayButton
-            Center(
-              child: Text(
-                (index + 1).toString(),
-                textAlign: TextAlign.center,
+            // Add HoverableSongPlayButton this will make the number change to the play button when you hover over it
+
+            HoverableSongPlayButton(
+              hoverMode: HoverMode.overlay, // Add this line
+              song: playlist.songs[index],
+              child: Center(
+                child: Text(
+                  (index + 1).toString(),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ),
